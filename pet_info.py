@@ -1,3 +1,5 @@
+def coletar_informacoes_pet():    
+
     nome = input("Nome do pet: ")
 
     while True:
@@ -20,9 +22,20 @@
         except ValueError:
             print("Por favor, insira um número válido para o peso.")
 
+    while True:
+        try:
+            altura = float(input("Altura do pet (em cm): "))
+            if altura < 0:
+                print("a altura não pode ser negativo. Tente novamente.")
+            else:
+                break
+        except ValueError:
+            print("Por favor, insira um número válido para a altura.")       
+
     print("\nInformações do pet:")
     print(f"Nome: {nome}")
     print(f"Idade: {idade} anos")
     print(f"Peso: {peso} kg")
+    print(f"Altura: {altura} cm")
 
 coletar_informacoes_pet()
